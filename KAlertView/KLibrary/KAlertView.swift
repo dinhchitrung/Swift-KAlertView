@@ -136,7 +136,9 @@ class KAlertView: UIView {
     }
     
     internal func setContentView(view: UIView) {
+        self.container.removeFromSuperview()
         self.container = view
+        self.container.frame = CGRectMake(GET_WIDTH/2 - self.container.bounds.size.width/2, GET_HEIGHT/2 - self.container.bounds.size.height/2, self.container.bounds.size.width, self.container.bounds.size.height)
         self.addSubview(self.container)
     }
 }
@@ -144,4 +146,13 @@ class KAlertView: UIView {
 @objc protocol KAlertViewDelegate : NSObjectProtocol {
     @objc optional func KAlertViewClickCancelButton()
     @objc optional func KAlertViewClickOtherButton()
+}
+
+extension UIView {
+    class func loadFromNibNamed(nibNamed: String, bundle : NSBundle? = nil) -> UIView? {
+        return UINib(
+            nibName: nibNamed,
+            bundle: bundle
+            ).instantiateWithOwner(nil, options: nil)[0] as? UIView
+    }
 }

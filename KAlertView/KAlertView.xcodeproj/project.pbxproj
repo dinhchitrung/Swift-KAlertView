@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9FA64DAE1B67277000CDC26A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA64DAD1B67277000CDC26A /* AppDelegate.swift */; };
+		9FA64DB01B67277000CDC26A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA64DAF1B67277000CDC26A /* ViewController.swift */; };
+		9FA64DB31B67277000CDC26A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FA64DB11B67277000CDC26A /* Main.storyboard */; };
+		9FA64DB51B67277000CDC26A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FA64DB41B67277000CDC26A /* Images.xcassets */; };
+		9FA64DB81B67277000CDC26A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FA64DB61B67277000CDC26A /* LaunchScreen.xib */; };
+		9FA64DC41B67277000CDC26A /* KAlertViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA64DC31B67277000CDC26A /* KAlertViewTests.swift */; };
+		9FA64DCF1B6727C000CDC26A /* KAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA64DCE1B6727C000CDC26A /* KAlertView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9FA64DBE1B67277000CDC26A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA64DA01B67277000CDC26A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FA64DA71B67277000CDC26A;
+			remoteInfo = KAlertView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9FA64DA81B67277000CDC26A /* KAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA64DAC1B67277000CDC26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA64DAD1B67277000CDC26A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9FA64DAF1B67277000CDC26A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9FA64DB21B67277000CDC26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9FA64DB41B67277000CDC26A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9FA64DB71B67277000CDC26A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9FA64DBD1B67277000CDC26A /* KAlertViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KAlertViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA64DC21B67277000CDC26A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FA64DC31B67277000CDC26A /* KAlertViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KAlertViewTests.swift; sourceTree = "<group>"; };
+		9FA64DCE1B6727C000CDC26A /* KAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KAlertView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9FA64DA51B67277000CDC26A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA64DBA1B67277000CDC26A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9FA64D9F1B67277000CDC26A = {
+			isa = PBXGroup;
+			children = (
+				9FA64DCD1B6727AD00CDC26A /* KLibrary */,
+				9FA64DAA1B67277000CDC26A /* KAlertView */,
+				9FA64DC01B67277000CDC26A /* KAlertViewTests */,
+				9FA64DA91B67277000CDC26A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9FA64DA91B67277000CDC26A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FA64DA81B67277000CDC26A /* KAlertView.app */,
+				9FA64DBD1B67277000CDC26A /* KAlertViewTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9FA64DAA1B67277000CDC26A /* KAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				9FA64DAD1B67277000CDC26A /* AppDelegate.swift */,
+				9FA64DAF1B67277000CDC26A /* ViewController.swift */,
+				9FA64DB11B67277000CDC26A /* Main.storyboard */,
+				9FA64DB41B67277000CDC26A /* Images.xcassets */,
+				9FA64DB61B67277000CDC26A /* LaunchScreen.xib */,
+				9FA64DAB1B67277000CDC26A /* Supporting Files */,
+			);
+			path = KAlertView;
+			sourceTree = "<group>";
+		};
+		9FA64DAB1B67277000CDC26A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FA64DAC1B67277000CDC26A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FA64DC01B67277000CDC26A /* KAlertViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				9FA64DC31B67277000CDC26A /* KAlertViewTests.swift */,
+				9FA64DC11B67277000CDC26A /* Supporting Files */,
+			);
+			path = KAlertViewTests;
+			sourceTree = "<group>";
+		};
+		9FA64DC11B67277000CDC26A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9FA64DC21B67277000CDC26A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FA64DCD1B6727AD00CDC26A /* KLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				9FA64DCE1B6727C000CDC26A /* KAlertView.swift */,
+			);
+			path = KLibrary;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9FA64DA71B67277000CDC26A /* KAlertView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA64DC71B67277000CDC26A /* Build configuration list for PBXNativeTarget "KAlertView" */;
+			buildPhases = (
+				9FA64DA41B67277000CDC26A /* Sources */,
+				9FA64DA51B67277000CDC26A /* Frameworks */,
+				9FA64DA61B67277000CDC26A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KAlertView;
+			productName = KAlertView;
+			productReference = 9FA64DA81B67277000CDC26A /* KAlertView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9FA64DBC1B67277000CDC26A /* KAlertViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FA64DCA1B67277000CDC26A /* Build configuration list for PBXNativeTarget "KAlertViewTests" */;
+			buildPhases = (
+				9FA64DB91B67277000CDC26A /* Sources */,
+				9FA64DBA1B67277000CDC26A /* Frameworks */,
+				9FA64DBB1B67277000CDC26A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9FA64DBF1B67277000CDC26A /* PBXTargetDependency */,
+			);
+			name = KAlertViewTests;
+			productName = KAlertViewTests;
+			productReference = 9FA64DBD1B67277000CDC26A /* KAlertViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9FA64DA01B67277000CDC26A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = Jana;
+				TargetAttributes = {
+					9FA64DA71B67277000CDC26A = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					9FA64DBC1B67277000CDC26A = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 9FA64DA71B67277000CDC26A;
+					};
+				};
+			};
+			buildConfigurationList = 9FA64DA31B67277000CDC26A /* Build configuration list for PBXProject "KAlertView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9FA64D9F1B67277000CDC26A;
+			productRefGroup = 9FA64DA91B67277000CDC26A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9FA64DA71B67277000CDC26A /* KAlertView */,
+				9FA64DBC1B67277000CDC26A /* KAlertViewTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9FA64DA61B67277000CDC26A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA64DB31B67277000CDC26A /* Main.storyboard in Resources */,
+				9FA64DB81B67277000CDC26A /* LaunchScreen.xib in Resources */,
+				9FA64DB51B67277000CDC26A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA64DBB1B67277000CDC26A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9FA64DA41B67277000CDC26A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA64DB01B67277000CDC26A /* ViewController.swift in Sources */,
+				9FA64DCF1B6727C000CDC26A /* KAlertView.swift in Sources */,
+				9FA64DAE1B67277000CDC26A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FA64DB91B67277000CDC26A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FA64DC41B67277000CDC26A /* KAlertViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9FA64DBF1B67277000CDC26A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FA64DA71B67277000CDC26A /* KAlertView */;
+			targetProxy = 9FA64DBE1B67277000CDC26A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9FA64DB11B67277000CDC26A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA64DB21B67277000CDC26A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9FA64DB61B67277000CDC26A /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9FA64DB71B67277000CDC26A /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9FA64DC51B67277000CDC26A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9FA64DC61B67277000CDC26A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9FA64DC81B67277000CDC26A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KAlertView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9FA64DC91B67277000CDC26A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KAlertView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9FA64DCB1B67277000CDC26A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KAlertViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KAlertView.app/KAlertView";
+			};
+			name = Debug;
+		};
+		9FA64DCC1B67277000CDC26A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KAlertViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KAlertView.app/KAlertView";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9FA64DA31B67277000CDC26A /* Build configuration list for PBXProject "KAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA64DC51B67277000CDC26A /* Debug */,
+				9FA64DC61B67277000CDC26A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FA64DC71B67277000CDC26A /* Build configuration list for PBXNativeTarget "KAlertView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA64DC81B67277000CDC26A /* Debug */,
+				9FA64DC91B67277000CDC26A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9FA64DCA1B67277000CDC26A /* Build configuration list for PBXNativeTarget "KAlertViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FA64DCB1B67277000CDC26A /* Debug */,
+				9FA64DCC1B67277000CDC26A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9FA64DA01B67277000CDC26A /* Project object */;
+}

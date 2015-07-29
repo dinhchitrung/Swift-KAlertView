@@ -24,6 +24,8 @@ class KAlertView: UIView {
     */
     var delegate: KAlertViewDelegate?
     var container: UIView = UIView()
+    var titleLabel: UILabel = UILabel()
+    var messageLabel: UILabel = UILabel()
     var cancelButton: UIButton = UIButton()
     var otherButton: UIButton = UIButton()
     
@@ -79,13 +81,46 @@ class KAlertView: UIView {
         calculateFrame()
     }
     
+    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.font = font
+        label.text = text
+        
+        label.sizeToFit()
+        return label.frame.height
+    }
+    
     func calculateFrame() {
+        
         container.frame = CGRectMake(GET_WIDTH/2 - DEFAULT_ALERT_WIDTH/2, GET_HEIGHT/2 - DEFAULT_ALERT_HEIGHT/2, DEFAULT_ALERT_WIDTH, DEFAULT_ALERT_HEIGHT)
         container.backgroundColor = UIColor.whiteColor()
         container.layer.cornerRadius = 8
         self.addSubview(container)
         
         if (otherButtonTitle == nil) {
+            //Setup "Title"
+            titleLabel.frame = CGRectMake(messageLeftRightPadding, titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
+            titleLabel.text = self.title
+            titleLabel.textColor = UIColor.blackColor()
+            titleLabel.textAlignment = NSTextAlignment.Center
+            titleLabel.font = UIFont.systemFontOfSize(17)
+            container.addSubview(titleLabel)
+            //Setup "Message"
+            messageLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding*2, self.container.bounds.size.height - self.titleLabel.bounds.size.height - self.titleTopPadding - self.titleBottomPadding - self.heightButtonAlert - self.messageBottomPadding)
+            messageLabel.text = self.message
+            messageLabel.textColor = UIColor.blackColor()
+            messageLabel.textAlignment = NSTextAlignment.Center
+            messageLabel.font = UIFont.systemFontOfSize(15)
+            messageLabel.numberOfLines = 0
+            self.container.addSubview(messageLabel)
+            //Calculate size message
+            let heightMessage = heightForView(self.message!, font: self.messageLabel.font, width: self.container.bounds.size.width - self.messageLeftRightPadding*2)
+            messageLabel.frame = CGRectMake(self.messageLabel.frame.origin.x, self.messageLabel.frame.origin.y, self.container.bounds.size.width - self.messageLeftRightPadding*2, heightMessage)
+            //Update Frame
+            DEFAULT_ALERT_HEIGHT = self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding + messageBottomPadding + heightMessage + heightButtonAlert
+            container.frame = CGRectMake(GET_WIDTH/2 - DEFAULT_ALERT_WIDTH/2, GET_HEIGHT/2 - DEFAULT_ALERT_HEIGHT/2, DEFAULT_ALERT_WIDTH, DEFAULT_ALERT_HEIGHT)
             //Setup "Cancel" Button
             cancelButton.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH, heightButtonAlert)
             cancelButton.setTitle(cancelButtonTitle, forState: UIControlState.Normal)

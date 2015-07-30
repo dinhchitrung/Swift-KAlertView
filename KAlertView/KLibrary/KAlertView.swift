@@ -133,7 +133,48 @@ class KAlertView: UIView {
             verticalSeparator.backgroundColor = UIColor(red: 196/255, green: 196/255, blue: 201/255, alpha: 0.5)
             container.addSubview(verticalSeparator)
         } else {
-            println("Double button")
+            titleLabel.frame = CGRectMake(messageLeftRightPadding, titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
+            titleLabel.text = self.title
+            titleLabel.textColor = UIColor.blackColor()
+            titleLabel.textAlignment = NSTextAlignment.Center
+            titleLabel.font = UIFont.systemFontOfSize(17)
+            container.addSubview(titleLabel)
+            //Setup "Message"
+            messageLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding*2, self.container.bounds.size.height - self.titleLabel.bounds.size.height - self.titleTopPadding - self.titleBottomPadding - self.heightButtonAlert - self.messageBottomPadding)
+            messageLabel.text = self.message
+            messageLabel.textColor = UIColor.blackColor()
+            messageLabel.textAlignment = NSTextAlignment.Center
+            messageLabel.font = UIFont.systemFontOfSize(15)
+            messageLabel.numberOfLines = 0
+            self.container.addSubview(messageLabel)
+            //Calculate size message
+            let heightMessage = heightForView(self.message!, font: self.messageLabel.font, width: self.container.bounds.size.width - self.messageLeftRightPadding*2)
+            messageLabel.frame = CGRectMake(self.messageLabel.frame.origin.x, self.messageLabel.frame.origin.y, self.container.bounds.size.width - self.messageLeftRightPadding*2, heightMessage)
+            //Update Frame
+            DEFAULT_ALERT_HEIGHT = self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding + messageBottomPadding + heightMessage + heightButtonAlert
+            container.frame = CGRectMake(GET_WIDTH/2 - DEFAULT_ALERT_WIDTH/2, GET_HEIGHT/2 - DEFAULT_ALERT_HEIGHT/2, DEFAULT_ALERT_WIDTH, DEFAULT_ALERT_HEIGHT)
+            //Setup "Cancel" Button
+            cancelButton.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH/2, heightButtonAlert)
+            cancelButton.setTitle(cancelButtonTitle, forState: UIControlState.Normal)
+            cancelButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
+            cancelButton.addTarget(self.delegate, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
+            cancelButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
+            container.addSubview(cancelButton)
+            //Setup "Other" Button
+            otherButton.frame = CGRectMake(DEFAULT_ALERT_WIDTH/2, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH/2, heightButtonAlert)
+            otherButton.setTitle(otherButtonTitle, forState: UIControlState.Normal)
+            otherButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
+            otherButton.addTarget(self.delegate, action: "KAlertViewClickOtherButton", forControlEvents: UIControlEvents.TouchUpInside)
+            otherButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
+            container.addSubview(otherButton)
+            //Setup "verticalSeparator" View
+            verticalSeparator.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH, 0.5)
+            verticalSeparator.backgroundColor = UIColor(red: 196/255, green: 196/255, blue: 201/255, alpha: 1)
+            container.addSubview(verticalSeparator)
+            //Setup "horizontalSeparator" View
+            horizontalSeparator.frame = CGRectMake(DEFAULT_ALERT_WIDTH/2 - 1/2, DEFAULT_ALERT_HEIGHT - heightButtonAlert, 1, heightButtonAlert)
+            horizontalSeparator.backgroundColor = UIColor(red: 196/255, green: 196/255, blue: 201/255, alpha: 1)
+            container.addSubview(horizontalSeparator)
         }
     }
     

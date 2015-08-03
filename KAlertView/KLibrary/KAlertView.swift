@@ -125,8 +125,8 @@ class KAlertView: UIView {
             cancelButton.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH, heightButtonAlert)
             cancelButton.setTitle(cancelButtonTitle, forState: UIControlState.Normal)
             cancelButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
-            cancelButton.addTarget(self.delegate, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
             cancelButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
+            cancelButton.addTarget(self, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
             container.addSubview(cancelButton)
             //Setup "verticalSeparator" View
             verticalSeparator.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - cancelButton.bounds.size.height, DEFAULT_ALERT_WIDTH, 1)
@@ -157,15 +157,15 @@ class KAlertView: UIView {
             cancelButton.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH/2, heightButtonAlert)
             cancelButton.setTitle(cancelButtonTitle, forState: UIControlState.Normal)
             cancelButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
-            cancelButton.addTarget(self.delegate, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
             cancelButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
+            cancelButton.addTarget(self, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
             container.addSubview(cancelButton)
             //Setup "Other" Button
             otherButton.frame = CGRectMake(DEFAULT_ALERT_WIDTH/2, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH/2, heightButtonAlert)
             otherButton.setTitle(otherButtonTitle, forState: UIControlState.Normal)
             otherButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
-            otherButton.addTarget(self.delegate, action: "KAlertViewClickOtherButton", forControlEvents: UIControlEvents.TouchUpInside)
             otherButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
+            otherButton.addTarget(self, action: "KAlertViewClickOtherButton", forControlEvents: UIControlEvents.TouchUpInside)
             container.addSubview(otherButton)
             //Setup "verticalSeparator" View
             verticalSeparator.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH, 0.5)
@@ -180,6 +180,18 @@ class KAlertView: UIView {
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func KAlertViewClickCancelButton() {
+        if (self.delegate!.respondsToSelector(Selector("KAlertViewClickCancelButton"))) {
+            self.delegate!.KAlertViewClickCancelButton!()
+        }
+    }
+    
+    func KAlertViewClickOtherButton() {
+        if (self.delegate!.respondsToSelector(Selector("KAlertViewClickOtherButton"))) {
+            self.delegate?.KAlertViewClickOtherButton!()
+        }
     }
     
     internal func showInView(view: UIView) {

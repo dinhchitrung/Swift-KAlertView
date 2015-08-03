@@ -99,7 +99,7 @@ class KAlertView: UIView {
         
         if (otherButtonTitle == nil) {
             //Setup "Title"
-            titleLabel.frame = CGRectMake(messageLeftRightPadding, titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
+            titleLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
             titleLabel.text = self.title
             titleLabel.textColor = UIColor.blackColor()
             titleLabel.textAlignment = NSTextAlignment.Center
@@ -115,7 +115,7 @@ class KAlertView: UIView {
             self.container.addSubview(messageLabel)
             //Calculate size message
             let heightMessage = heightForView(self.message!, font: self.messageLabel.font, width: self.container.bounds.size.width - self.messageLeftRightPadding*2)
-            messageLabel.frame = CGRectMake(self.messageLabel.frame.origin.x, self.messageLabel.frame.origin.y, self.container.bounds.size.width - self.messageLeftRightPadding*2, heightMessage)
+            messageLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding, DEFAULT_ALERT_WIDTH - self.messageLeftRightPadding*2, heightMessage)
             //Update Frame
             DEFAULT_ALERT_HEIGHT = self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding + messageBottomPadding + heightMessage + heightButtonAlert
             container.frame = CGRectMake(GET_WIDTH/2 - DEFAULT_ALERT_WIDTH/2, GET_HEIGHT/2 - DEFAULT_ALERT_HEIGHT/2, DEFAULT_ALERT_WIDTH, DEFAULT_ALERT_HEIGHT)
@@ -131,7 +131,7 @@ class KAlertView: UIView {
             verticalSeparator.backgroundColor = UIColor(red: 196/255, green: 196/255, blue: 201/255, alpha: 0.5)
             container.addSubview(verticalSeparator)
         } else {
-            titleLabel.frame = CGRectMake(messageLeftRightPadding, titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
+            titleLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
             titleLabel.text = self.title
             titleLabel.textColor = UIColor.blackColor()
             titleLabel.textAlignment = NSTextAlignment.Center
@@ -147,7 +147,7 @@ class KAlertView: UIView {
             self.container.addSubview(messageLabel)
             //Calculate size message
             let heightMessage = heightForView(self.message!, font: self.messageLabel.font, width: self.container.bounds.size.width - self.messageLeftRightPadding*2)
-            messageLabel.frame = CGRectMake(self.messageLabel.frame.origin.x, self.messageLabel.frame.origin.y, self.container.bounds.size.width - self.messageLeftRightPadding*2, heightMessage)
+            messageLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding, DEFAULT_ALERT_WIDTH - self.messageLeftRightPadding*2, heightMessage)
             //Update Frame
             DEFAULT_ALERT_HEIGHT = self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding + messageBottomPadding + heightMessage + heightButtonAlert
             container.frame = CGRectMake(GET_WIDTH/2 - DEFAULT_ALERT_WIDTH/2, GET_HEIGHT/2 - DEFAULT_ALERT_HEIGHT/2, DEFAULT_ALERT_WIDTH, DEFAULT_ALERT_HEIGHT)

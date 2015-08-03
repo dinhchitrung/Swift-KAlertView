@@ -184,11 +184,19 @@ class KAlertView: UIView {
         if (self.delegate!.respondsToSelector(Selector("KAlertViewClickCancelButton"))) {
             self.delegate!.KAlertViewClickCancelButton!()
         }
+        
+        if (self.delegate!.respondsToSelector(Selector("KAlertViewClickCancelAlertView:"))) {
+            self.delegate!.KAlertViewClickCancelAlertView!(self)
+        }
     }
     
     func KAlertViewClickOtherButton() {
         if (self.delegate!.respondsToSelector(Selector("KAlertViewClickOtherButton"))) {
-            self.delegate?.KAlertViewClickOtherButton!()
+            self.delegate!.KAlertViewClickOtherButton!()
+        }
+        
+        if (self.delegate!.respondsToSelector(Selector("KAlertViewClickOtherAlertView:"))) {
+            self.delegate!.KAlertViewClickOtherAlertView!(self)
         }
     }
     
@@ -234,6 +242,9 @@ class KAlertView: UIView {
 @objc protocol KAlertViewDelegate : NSObjectProtocol {
     @objc optional func KAlertViewClickCancelButton()
     @objc optional func KAlertViewClickOtherButton()
+    
+    @objc optional func KAlertViewClickCancelAlertView(alertView: KAlertView)
+    @objc optional func KAlertViewClickOtherAlertView(alertView: KAlertView)
 }
 
 extension UIView {

@@ -22,7 +22,7 @@ class KAlertView: UIView {
         // Drawing code
     }
     */
-    var delegate: KAlertViewDelegate?
+    weak var delegate: KAlertViewDelegate?
     var container: UIView = UIView()
     var titleLabel: UILabel = UILabel()
     var messageLabel: UILabel = UILabel()
@@ -77,8 +77,6 @@ class KAlertView: UIView {
         self.message = message
         self.cancelButtonTitle = cancelButtonTitle
         self.otherButtonTitle = otherButtonTitle
-        
-        calculateFrame()
     }
     
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
@@ -195,6 +193,8 @@ class KAlertView: UIView {
     }
     
     internal func showInView(view: UIView) {
+        calculateFrame()
+        
         view.addSubview(self)
         self.backgroundColor = UIColor(white: 0.5, alpha: 0)
         self.container.backgroundColor = UIColor(white: 1, alpha: 0)

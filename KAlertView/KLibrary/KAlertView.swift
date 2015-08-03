@@ -62,7 +62,7 @@ class KAlertView: UIView {
         self.cancelButtonTitle = cancelButtonTitle
         self.otherButtonTitle = nil
         
-        calculateFrame()
+        defaultContent()
     }
     
     init(title: String?, message: String?, delegate: KAlertViewDelegate?, cancelButtonTitle: String?, otherButtonTitle: String?) {
@@ -77,6 +77,18 @@ class KAlertView: UIView {
         self.message = message
         self.cancelButtonTitle = cancelButtonTitle
         self.otherButtonTitle = otherButtonTitle
+        
+        defaultContent()
+    }
+    
+    func defaultContent() {
+        titleLabel.font = UIFont.boldSystemFontOfSize(17)
+        messageLabel.font = UIFont.systemFontOfSize(15)
+        titleLabel.textColor = UIColor.blackColor()
+        messageLabel.textColor = UIColor.blackColor()
+        
+        cancelButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
+        otherButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
     }
     
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
@@ -101,16 +113,12 @@ class KAlertView: UIView {
             //Setup "Title"
             titleLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
             titleLabel.text = self.title
-            titleLabel.textColor = UIColor.blackColor()
             titleLabel.textAlignment = NSTextAlignment.Center
-            titleLabel.font = UIFont.systemFontOfSize(17)
             container.addSubview(titleLabel)
             //Setup "Message"
             messageLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding*2, self.container.bounds.size.height - self.titleLabel.bounds.size.height - self.titleTopPadding - self.titleBottomPadding - self.heightButtonAlert - self.messageBottomPadding)
             messageLabel.text = self.message
-            messageLabel.textColor = UIColor.blackColor()
             messageLabel.textAlignment = NSTextAlignment.Center
-            messageLabel.font = UIFont.systemFontOfSize(15)
             messageLabel.numberOfLines = 0
             self.container.addSubview(messageLabel)
             //Calculate size message
@@ -122,8 +130,6 @@ class KAlertView: UIView {
             //Setup "Cancel" Button
             cancelButton.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH, heightButtonAlert)
             cancelButton.setTitle(cancelButtonTitle, forState: UIControlState.Normal)
-            cancelButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
-            cancelButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
             cancelButton.addTarget(self, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
             container.addSubview(cancelButton)
             //Setup "verticalSeparator" View
@@ -133,16 +139,12 @@ class KAlertView: UIView {
         } else {
             titleLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding, self.container.bounds.size.width - self.messageLeftRightPadding * 2, self.heightTitleAlert)
             titleLabel.text = self.title
-            titleLabel.textColor = UIColor.blackColor()
             titleLabel.textAlignment = NSTextAlignment.Center
-            titleLabel.font = UIFont.systemFontOfSize(17)
             container.addSubview(titleLabel)
             //Setup "Message"
             messageLabel.frame = CGRectMake(self.messageLeftRightPadding, self.titleTopPadding + self.heightTitleAlert + self.titleBottomPadding, self.container.bounds.size.width - self.messageLeftRightPadding*2, self.container.bounds.size.height - self.titleLabel.bounds.size.height - self.titleTopPadding - self.titleBottomPadding - self.heightButtonAlert - self.messageBottomPadding)
             messageLabel.text = self.message
-            messageLabel.textColor = UIColor.blackColor()
             messageLabel.textAlignment = NSTextAlignment.Center
-            messageLabel.font = UIFont.systemFontOfSize(15)
             messageLabel.numberOfLines = 0
             self.container.addSubview(messageLabel)
             //Calculate size message
@@ -154,15 +156,11 @@ class KAlertView: UIView {
             //Setup "Cancel" Button
             cancelButton.frame = CGRectMake(0, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH/2, heightButtonAlert)
             cancelButton.setTitle(cancelButtonTitle, forState: UIControlState.Normal)
-            cancelButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
-            cancelButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
             cancelButton.addTarget(self, action: "KAlertViewClickCancelButton", forControlEvents: UIControlEvents.TouchUpInside)
             container.addSubview(cancelButton)
             //Setup "Other" Button
             otherButton.frame = CGRectMake(DEFAULT_ALERT_WIDTH/2, DEFAULT_ALERT_HEIGHT - heightButtonAlert, DEFAULT_ALERT_WIDTH/2, heightButtonAlert)
             otherButton.setTitle(otherButtonTitle, forState: UIControlState.Normal)
-            otherButton.setTitleColor(UIColor(red: 0, green: 0.478431, blue: 1, alpha: 1), forState: UIControlState.Normal)
-            otherButton.addTarget(self, action: "dismiss", forControlEvents: UIControlEvents.TouchUpInside)
             otherButton.addTarget(self, action: "KAlertViewClickOtherButton", forControlEvents: UIControlEvents.TouchUpInside)
             container.addSubview(otherButton)
             //Setup "verticalSeparator" View
@@ -181,6 +179,8 @@ class KAlertView: UIView {
     }
     
     func KAlertViewClickCancelButton() {
+        dismiss()
+        
         if (self.delegate!.respondsToSelector(Selector("KAlertViewClickCancelButton"))) {
             self.delegate!.KAlertViewClickCancelButton!()
         }
@@ -191,6 +191,8 @@ class KAlertView: UIView {
     }
     
     func KAlertViewClickOtherButton() {
+        dismiss()
+        
         if (self.delegate!.respondsToSelector(Selector("KAlertViewClickOtherButton"))) {
             self.delegate!.KAlertViewClickOtherButton!()
         }
